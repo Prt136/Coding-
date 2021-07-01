@@ -1,0 +1,48 @@
+6.)You need to have sorting on the employees list/department list.
+ 
+Collections class has a method sort() which takes List implementation such as ArrayList, LinkedList etc.
+
+Here we will create a list of employees and then sort a list of employees using the OrderBy() method based on salary and then check the department of employees using the Linq Where() method.
+
+Program:-
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Employee
+{
+    int ID;
+    string Name;
+    int Salary;
+    string Department;
+
+    public override string ToString()
+    {
+        return ID + " " + Name+" "+Salary + " "+Department;
+    }
+
+    static void Main(string[] args)
+    {
+        List<Employee> employees = new List<Employee>()
+        {
+             new Employee {ID=101,   Name="Amit  "    , Salary=4000,Department="ABC"},
+             new Employee {ID=102,   Name="Gautam"    , Salary=6000,Department="XYZ"},
+             new Employee {ID=103,   Name="Salman"    , Salary=3000,Department="ABC"},
+             new Employee {ID=104,   Name="Ram   "    , Salary=2000,Department="XYZ"},
+             new Employee {ID=105,   Name="Shyam "    , Salary=7000,Department="ABC"},
+             new Employee {ID=106,   Name="Kishor"    , Salary=5000,Department="XYZ"},
+        };
+
+
+        var result = employees.Where(emp=>emp.Department=="ABC").OrderBy(sal => sal.Salary);
+
+
+        Console.WriteLine("ID  Name  Salary  Department");
+        Console.WriteLine("=========");
+        foreach (Employee emp in result)
+        {
+            Console.WriteLine(emp.ToString());
+        }
+        Console.WriteLine("=========");
+    }
+}

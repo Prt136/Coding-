@@ -1,0 +1,10 @@
+7.) Implement searching of data based on any field search. (for this you can use any algorithm either on API side or on DB side by means of functions)?
+
+Searching of data -
+Searching is the process of finding a given value position in a list of values. It decides whether a search key is present in the data or not. It is the algorithmic process of finding a particular item in a collection of items.
+
+Functions-
+Functions allow you to define and execute server-side logic for your application. 
+A System Function is a function that runs as the system user rather than an application user.
+
+Searching Algorithms are designed to check for an element or retrieve an element from any data structure where it is stored. 

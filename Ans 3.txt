@@ -1,0 +1,43 @@
+ how to setup nodejs project using ts.
+--TypeScript--
+ 1) Open-source programming languages fom Microsoft. 
+ 2) Typed superset of javaScript.
+ 3)It can easily run in a browser or Nodejs.
+
+Install the TypeScript compiler
+1)Visual Studio Code includes TypeScript language support but does not include the TypeScript compiler, tsc. 
+2)You will need to install the TypeScript compiler either globally.
+3)TypeScript source code to JavaScript (tsc HelloWorld.ts).
+
+npm install -g typescript
+You can test your install by checking the version or help.
+ tsc --version
+ tsc --help 
+
+It is important to keep in mind that VS Code's TypeScript language service is separate from your installed TypeScript compiler. 
+You can see the VS Code's TypeScript version in the Status Bar when you open a TypeScript file.
+
+VS Code integrates with tsc through our integrated task runner. 
+We can use this to transpile .ts files into .js files.
+
+Step 1: Create a simple TS (TS is 
+Open VS Code on an empty folder and create a helloworld.ts file.
+Programme:-
+                 let message: string = 'Hello World';
+                console.log(message);
+  
+TypeScript compiler tsc installed correctly and a working Hello World program, open a terminal and type tsc code.ts. 
+
+javascript Code-
+               Var message ='Hello World';
+               console.log(message);
+the transpiled helloworld.js JavaScript file, which you can run if you have Node.js installed, by typing node code.js.
+
+Ans=Hello World
+
+
+
+
+
+
+

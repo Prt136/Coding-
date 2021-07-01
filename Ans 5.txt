@@ -1,0 +1,12 @@
+5. ) For illustration purpose you can think of an Employee-Department management system, where we should be able to add employees/ departments, link them to any one department if possible.
+
+There must be employees in your workspace before you can start adding them to your departments.
+
+Adding employees through the Departments
+If you have not yet added employees for a specific department, you’ll have the chance to add employees while on the Departments page. Once there are employees attached to the department, you will not have the ability to add employees from this view. 
+
+Employees who did not belong to any department will automatically appear under “New”. 
+
+Employees who already belonged to a different department will undergo “confirmation”.
+
+If you want to bulk edit existing employees into a department, you can easily do this from the Employees overview page. 

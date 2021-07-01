@@ -1,0 +1,136 @@
+What is API
+1) A framework for building HTTP Services.
+2) Uses Standard HTTP method(Get/Post/Put/Delete.)
+3) Support multiple text formate like XML,JSON etc.
+4) Based on light weight Restful Architecture.
+
+API by adding logic to handle POST, PUT, and DELETE requests on the employees endpoint.
+This is the verb- Get/Put/Post/Delete.
+Post  -   Create a row.(C)
+Get   -    Read a row.(R)
+Put    -   Update a row.(U)
+Delete -  Delete a row(D)
+
+
+Adding the Routing Logic
+you will route all HTTP verbs through the existing route path (with the optional id parameter).
+router.route('/employees/:id?')
+  
+  .get(employees.get)
+ 
+  .post(employees.post)
+ 
+  .put(employees.put)
+ 
+  .delete(employees.delete);
+
+POST Requests
+HTTP POST requests are used to create new resources (employee records, in this case). 
+function getEmployeeFromRec(req) 
+{
+  const employee = {
+  
+  first_name: req.body.first_name,
+  
+  last_name: req.body.last_name,
+  
+  email: req.body.email,
+    
+  phone_number: req.body.phone_number,
+   
+  hire_date: req.body.hire_date,
+    job_id: req.body.job_id,
+   
+  salary: req.body.salary,
+   
+  commission_pct: req.body.commission_pct,
+   
+  manager_id: req.body.manager_id,
+  
+  department_id: req.body.department_id
+  };
+
+ 
+  return employee;
+}
+
+async function post(req, res, next) 
+{
+  try 
+{
+    let employee = getEmployeeFromRec(req);
+
+  
+     employee = await employees.create(employee);
+
+   
+     res.status(201).json(employee);
+  
+} catch (err) {
+    next(err);
+  
+}
+}
+
+module.exports.post = post;
+The post function uses getEmployeeFromRec to initialize a variable that is then passed to the create method of the employees database API.
+
+ PUT Requests
+ async function put(req, res, next) 
+ {
+  try {
+  
+   let employee = getEmployeeFromRec(req);
+
+   
+   employee.employee_id = parseInt(req.params.id, 10);
+
+   
+   employee = await employees.update(employee);
+
+   
+   if (employee !== null) {
+    
+   res.status(200).json(employee);
+    } 
+else {
+    
+  res.status(404).end();
+   
+ }
+ 
+ } catch (err) {
+    next(err);
+  
+}
+}
+
+module.exports.put = put;
+
+DELETE Requests
+async function del(req, res, next) {
+
+  try {
+    
+  const id = parseInt(req.params.id, 10);
+
+  
+  const success = await employees.delete(id);
+
+  
+  if (success) {
+   
+   res.status(204).end();
+  
+  } 
+else {
+      res.status(404).end();
+  
+  }
+  } catch (err) {
+    next(err);
+ 
+ }
+}
+
+module.exports.delete = del;

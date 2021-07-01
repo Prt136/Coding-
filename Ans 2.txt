@@ -1,0 +1,21 @@
+Q .2)You need to think from OOPS concept and do the coding. Use Classes & Objects for accepting data and data transmission.
+   Class=A class is simply a representation of a type of object. It is the blueprint, or plan, or template, that describes the details of an object. 
+   Object= object is an instance of a particular class or subclass with the class's own methods or procedures and data variables.
+   Data transmission= refers to the process of transferring data between two or more digital devices.
+
+class student
+{
+private:
+ int roll_num,int age,chr name,char gender;  // data members
+public:
+  void addStudent(int roll_null,char name,intage);
+  void editStudent(int roll_num,char name int age);
+};
+
+void main()
+{
+student stu;
+stu.addStudent(101,priya,19);
+stu.editStudent(102,riya,19);
+}
+

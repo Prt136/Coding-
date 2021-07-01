@@ -1,0 +1,14 @@
+9. API documentation should be using swagger.
+
+API Documentation
+API documentation is a technical content deliverable, containing instructions about how to effectively use and integrate with an API. 
+API Documentation has traditionally been done using regular content creation and maintenance tools and text editors.
+
+Swagger
+Swagger is a set of open-source tools built around the OpenAPI Specification that can help us to design, build, document and consume REST APIs.
+The ability of APIs to describe their own structure is the root of all awesomeness in Swagger.
+
+The major Swagger tools include:
+Swagger Editor — browser-based editor where one can write OpenAPI specification
+Swagger UI — renders OpenAPI specs as interactive API documentation
+Swagger Codegen — generates server stubs and client libraries from an OpenAPI specification
